@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.emanuelgabriel.apirest.model.Cliente;
 import com.emanuelgabriel.apirest.repository.ClienteRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(value="API REST de Clientes")
 @RestController
 @RequestMapping(value="/api/v1")
 public class ClienteResource {
@@ -30,6 +34,7 @@ public class ClienteResource {
 	 * Tipo de Mapeamento: @GetMapping("/clientes")
 	 * Tipo de método: return(com retorno de uma Lista de Cliente)
 	 */
+	@ApiOperation(value="Retorna uma lista de Clientes ou todos os Clientes já cadastrados.")
 	@GetMapping("/clientes")
 	public List<Cliente> listaCliente(){
 		return clienteRepository.findAll();
@@ -42,6 +47,7 @@ public class ClienteResource {
 	 * Tipo de Mapeamento: @GetMapping("/cliente/{id}")
 	 * Tipo de método: return(com retorno do tipo Cliente)
 	 */
+	@ApiOperation(value="Retorna um Cliente por seu Id.")
 	@GetMapping("/cliente/{id}")
 	public Cliente listaCliente(@PathVariable(value="id") long id) {
 		return clienteRepository.findClienteById(id);
@@ -54,6 +60,7 @@ public class ClienteResource {
 	 * Tipo de Mapeamento:  @PostMapping("/cliente")
 	 * Tipo de método: return(com retorno do tipo Cliente)
 	 */
+	@ApiOperation(value="Salva um Cliente.")
 	 @PostMapping("/cliente")
 	 public Cliente salvarCliente(@RequestBody Cliente cliente) {
 		return  clienteRepository.save(cliente);
@@ -66,6 +73,7 @@ public class ClienteResource {
 	  * Tipo de Mapeamento:  @DeleteMapping("/cliente")
 	  * Tipo de método: void(sem retorno)
 	  */
+	 @ApiOperation(value="Deleta um Cliente cadastrado na API.")
 	 @DeleteMapping("/cliente")
 	 public void deletarCliente(@RequestBody @Valid Cliente cliente) {
 		 clienteRepository.delete(cliente);
@@ -78,6 +86,7 @@ public class ClienteResource {
 	  * Tipo de Mapeamento:  @PutMapping("/cliente")
 	  * Tipo de método: return(com retorno do tipo Cliente)
 	  */
+	 @ApiOperation(value="Atualiza ou edita um Cliente cadastrado na API.")
 	 @PutMapping("/cliente")
 	 public Cliente atualizarCliente(@RequestBody @Valid Cliente cliente) {
 		 return clienteRepository.save(cliente);

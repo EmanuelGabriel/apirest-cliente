@@ -33,12 +33,12 @@ public class SwaggerConfig {
 
     private ApiInfo metaInfo() {
     	
-          //Descrição acerca da API REST
+        //Descrição acerca da API REST.
     	String titulo = "Cliente API REST";
     	String descricao = "API REST de cadastro de cliente";
     	String termosECondicoes = "Termos e Condições de uso";
 
-    	//Descrição acerca do contato do desenvolvedor  tring license, String licenseUrl,
+    	//Descrição acerca do contato do desenvolvedor e sua licença.
     	String nomeDev = "Emanuel A. Gabriel";
     	String urlDev = "https://emanuelgabriel.github.io";
     	String emailDev = "emanuel.gabriel.sousa@hotmail.com";

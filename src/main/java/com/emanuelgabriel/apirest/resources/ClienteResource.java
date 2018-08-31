@@ -20,7 +20,7 @@ import com.emanuelgabriel.apirest.repository.ClienteRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@Api(value="API REST de Clientes")
+@Api(value="API RESTful de Clientes")
 @RestController
 @RequestMapping(value="/api/v1")
 public class ClienteResource {

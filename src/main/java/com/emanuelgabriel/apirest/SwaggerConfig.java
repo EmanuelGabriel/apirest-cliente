@@ -35,7 +35,7 @@ public class SwaggerConfig {
     	
         //Descrição acerca da API REST.
     	String titulo = "Cliente API REST";
-    	String descricao = "API REST de cadastro de cliente";
+    	String descricao = "RESTful Web Service de cadastro de cliente";
     	String termosECondicoes = "Termos e Condições de uso";
 
     	//Descrição acerca do contato do desenvolvedor e sua licença.
